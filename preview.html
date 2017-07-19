@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Slide Preview</title>
+  <script src='hosted.js'></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    #preview {
+      width: 640px;
+      height: 360px;
+      border: 1px solid black;
+      background: black;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #preview img {
+      width: auto;
+      height: 360px;
+    }
+
+    input {
+      padding: 3px;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+<label for="eventid">EventID:</label>
+<input type="text" id="eventid" value="" onkeypress="return loadslide(event)">
+<div id="preview">
+  <img id="image" src="empty.png" alt="No event slide found">
+</div>
+<script>
+  function loadslide(e) {
+    if (e.keyCode == 13) {
+      var input = document.getElementById("eventid");
+      var image = document.getElementById("image");
+      image.setAttribute("src", input.value + '.png');
+      return false;
+    }
+  }
+</script>
+</body>
+</html>

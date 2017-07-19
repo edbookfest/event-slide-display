@@ -1,0 +1,119 @@
+{
+  "name": "Event Slide",
+  "options": [
+    {
+      "title": "Event Slide Preview",
+      "type": "section"
+    },
+    {
+      "title": "",
+      "name": "preview",
+      "type": "custom",
+      "hint": "Preview event slides available in this package",
+      "page": "preview.html",
+      "default": []
+    },
+    {
+      "title": "Event Slide Configuration",
+      "type": "section"
+    },
+    {
+      "title": "Default Event Slide",
+      "ui_width": 4,
+      "name": "default_slide",
+      "type": "resource",
+      "valid": ["image"],
+      "default": "empty.png"
+    },
+    {
+      "title": "Book Signing Notification",
+      "type": "section"
+    },
+    {
+      "title": "Signing text",
+      "name": "signing_text",
+      "type": "string",
+      "default": "There will be a book signing immediately after this event",
+      "ui_width": 12
+    },
+    {
+      "type": "font",
+      "title": "Font",
+      "name": "signing_font",
+      "ui_width": 3,
+      "default": "silkscreen.ttf"
+    },
+    {
+      "type": "integer",
+      "title": "Font size",
+      "name": "signing_font_size",
+      "ui_width": 3,
+      "default": 35
+    },
+    {
+      "type": "color",
+      "title": "Text colour",
+      "name": "signing_colour",
+      "ui_width": 3,
+      "default": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "type": "integer",
+      "title": "Position Y",
+      "name": "signing_y",
+      "ui_width": 3,
+      "default": 60
+    },
+    {
+      "title": "Screen Configuration",
+      "type": "section"
+    },
+    {
+      "title": "Automatic resolution",
+      "ui_width": 4,
+      "name": "auto_resolution",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "title": "Manual width",
+      "ui_width": 4,
+      "name": "width",
+      "type": "integer",
+      "default": 1920
+    },
+    {
+      "title": "Manual height",
+      "ui_width": 4,
+      "name": "height",
+      "type": "integer",
+      "default": 1080
+    },
+    {
+      "title": "Additional Images",
+      "type": "section"
+    },
+    {
+      "title": "Additional images",
+      "name": "additional_images",
+      "type": "list",
+      "itemname": "additional image",
+      "items": [
+        {
+          "title": "Additional images",
+          "name": "file",
+          "type": "resource",
+          "valid": [
+            "image"
+          ],
+          "default": "empty.png"
+        }
+      ]
+    }
+  ]
+}

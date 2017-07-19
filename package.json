@@ -1,0 +1,7 @@
+{
+    "name": "Event Slide",
+    "author": "craig@netchaos.net",
+    "desc": "Displays the title slide for an event",
+    "repository": "https://github.com/edbookfest/event-slide-display.git",
+    "version": "2.0"
+}
