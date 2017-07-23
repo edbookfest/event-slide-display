@@ -27,18 +27,17 @@ local function load_event_slide(event_id)
     print("ATTEMPTNG TO LOAD EVENT SLIDE FOR: " .. event_id)
     if event_id ~= loaded_event_id then
         local filename = event_id .. ".png"
-
-        local file_exists, openfile = pcall(resource.open_file, filename)
-        if file_exists then
-            event_slide = resource.load_image(openfile)
+        local got_additional, surface = get_additional_image(filename)
+        if got_additional then
+            event_slide = surface
             loaded_event_id = event_id
-            print("LOADING EVENT SLIDE FOR: " .. event_id)
+            print("USING ADDITIONAL IMAGE FOR: " .. event_id)
         else
-            local got_additional, surface = get_additional_image(filename)
-            if got_additional then
-                event_slide = surface
+            local file_exists, openfile = pcall(resource.open_file, filename)
+            if file_exists then
+                event_slide = resource.load_image(openfile)
                 loaded_event_id = event_id
-                print("USING ADDITIONAL IMAGE FOR: " .. event_id)
+                print("LOADING EVENT SLIDE FOR: " .. event_id)
             else
                 event_slide = CONFIG.default_slide.get_surface()
                 loaded_event_id = nil
