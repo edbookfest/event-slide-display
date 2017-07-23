@@ -10,7 +10,7 @@ node.alias("walkin/event-slide")
 
 local signing = "true"
 local loaded_event_id
-local event_slide
+local event_slide = CONFIG.default_slide.get_surface()
 
 local function get_additional_image(filename)
     local images = CONFIG.additional_images
@@ -40,21 +40,13 @@ local function load_event_slide(event_id)
                 loaded_event_id = event_id
                 print("USING ADDITIONAL IMAGE FOR: " .. event_id)
             else
-                event_slide = nil
+                event_slide = CONFIG.default_slide.get_surface()
                 loaded_event_id = nil
                 print("NO EVENT SLIDE FOUND FOR: " .. event_id)
             end
         end
     else
         print("EVENT SLIDE ALREADY LOADED FOR: " .. loaded_event_id)
-    end
-end
-
-local function get_event_slide()
-    if event_slide then
-        return event_slide
-    else
-        return CONFIG.default_slide.get_surface()
     end
 end
 
@@ -73,7 +65,7 @@ util.data_mapper {
 function node.render()
     gl.clear(0, 0, 0, 1)
 
-    util.draw_correct(get_event_slide(), 0, 0, WIDTH, HEIGHT)
+    util.draw_correct(event_slide, 0, 0, WIDTH, HEIGHT)
 
     if signing == "true" and loaded_event_id then
         local signing_text_width = CONFIG.signing_font:width(CONFIG.signing_text, CONFIG.signing_font_size)
