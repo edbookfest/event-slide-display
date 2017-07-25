@@ -26,50 +26,6 @@
       "default": "empty.png"
     },
     {
-      "title": "Book Signing Notification",
-      "type": "section"
-    },
-    {
-      "title": "Signing text",
-      "name": "signing_text",
-      "type": "string",
-      "default": "There will be a book signing immediately after this event",
-      "ui_width": 12
-    },
-    {
-      "type": "font",
-      "title": "Font",
-      "name": "signing_font",
-      "ui_width": 3,
-      "default": "silkscreen.ttf"
-    },
-    {
-      "type": "integer",
-      "title": "Font size",
-      "name": "signing_font_size",
-      "ui_width": 3,
-      "default": 35
-    },
-    {
-      "type": "color",
-      "title": "Text colour",
-      "name": "signing_colour",
-      "ui_width": 3,
-      "default": [
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "type": "integer",
-      "title": "Position Y",
-      "name": "signing_y",
-      "ui_width": 3,
-      "default": 60
-    },
-    {
       "title": "Screen Configuration",
       "type": "section"
     },
