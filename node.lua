@@ -8,7 +8,6 @@ end
 
 node.alias("walkin/event-slide")
 
-local signing = "true"
 local loaded_event_id
 local event_slide = CONFIG.default_slide.get_surface()
 
@@ -49,12 +48,6 @@ util.data_mapper {
     ["eventid"] = function(eventid)
         load_event_slide(eventid)
     end;
-    ["signing"] = function(value)
-        print("BOOK SIGNING " .. value)
-        if value ~= signing then
-            signing = value
-        end
-    end;
 }
 
 node.event("input", function(line, client)
@@ -72,11 +65,5 @@ end)
 
 function node.render()
     gl.clear(0, 0, 0, 1)
-
     util.draw_correct(event_slide, 0, 0, WIDTH, HEIGHT)
-
-    if signing == "true" and loaded_event_id then
-        local signing_text_width = CONFIG.signing_font:width(CONFIG.signing_text, CONFIG.signing_font_size)
-        CONFIG.signing_font:write((WIDTH - signing_text_width) / 2, HEIGHT - CONFIG.signing_y, CONFIG.signing_text, CONFIG.signing_font_size, CONFIG.signing_colour.rgba())
-    end
 end
