@@ -61,6 +61,19 @@ util.data_mapper {
     end;
 }
 
+node.event("input", function(line, client)
+    if line == "howsitgoing" then
+        print("HIG recieved")
+        local status = "Currently showing "
+        if loaded_event_id then
+            status = status .. loaded_event_id
+        else
+            status = status .. "DEFAULT"
+        end
+        node.client_write(client, status)
+    end
+end)
+
 function node.render()
     gl.clear(0, 0, 0, 1)
 
