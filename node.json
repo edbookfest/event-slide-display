@@ -26,6 +26,14 @@
       "default": "empty.png"
     },
     {
+      "title": "Automatic update",
+      "ui_width": 4,
+      "name": "auto_update",
+      "type": "boolean",
+      "hint": "Automatically refresh the currently loaded event slide if the file is updated",
+      "default": false
+    },
+    {
       "title": "Screen Configuration",
       "type": "section"
     },

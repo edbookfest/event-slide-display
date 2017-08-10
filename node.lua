@@ -63,6 +63,14 @@ node.event("input", function(line, client)
     end
 end)
 
+node.event("content_update", function(filename, file)
+    if loaded_event_id and CONFIG.auto_update then
+        if filename == loaded_event_id .. ".png" then
+            load_event_slide(loaded_event_id)
+        end
+    end
+end)
+
 function node.render()
     gl.clear(0, 0, 0, 1)
     util.draw_correct(event_slide, 0, 0, WIDTH, HEIGHT)
